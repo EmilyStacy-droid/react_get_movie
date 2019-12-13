@@ -11,15 +11,17 @@ export class MovieItem extends React.Component {
 
     componentDidMount() {
         let movieId = this.props.match.params.movieId;
+        console.log("movieId is" + movieId);
         if (movieId) {
-            this.movieService.getMovieById(movieId).then(movie => this.setState({ movie }))
+            this.movieService.getMovieById(movieId).then(movie => this.setState({ movie })).then(console.log("the movie state is" + this.state.movie))
         }
+        
     }
     render() {
         if (!this.state.movie) {
             return (
-                <div class="spinner-border text-secondary" role="status">
-                    <span class="sr-only">Loading...</span>
+                <div className="spinner-border text-secondary" role="status">
+                    <span className="sr-only">Loading...</span>
                 </div>
             )
         }

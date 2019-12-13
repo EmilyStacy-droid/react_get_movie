@@ -42,7 +42,7 @@ export class MovieList extends React.Component {
                     <tbody>
                         {this.state.movies.map((movie, i) => (
                             <tr key={i} id={i}>
-                                <td><Link to = {`/movie/${i+1}`}>{movie.movieTitle!==null?movie.movieTitle: "N/A"}</Link></td>
+                                <td><Link to = {`/movie/${movie.id}`}>{movie.movieTitle!==null?movie.movieTitle: "N/A"}</Link></td>
                                 <td >{movie.genre !== null ? movie.genre : 'N/A'}</td>
                                 <td> {movie.actors !== null ? movie.actors : 'N/A'} </td>
                                 <td> {movie.country !== null ? movie.country : 'N/A'} </td>

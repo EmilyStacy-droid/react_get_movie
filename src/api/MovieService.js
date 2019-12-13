@@ -38,5 +38,18 @@ export class MovieService{
         )
 
     }
+
+    updateMovie(id, movie){
+        return new Promise ((resolve,reject)=> {
+            axios.put(`${this.secondURL}/${id}`,movie)
+            .then(x => resolve(x.data))
+            .catch(x=> {
+                alert(x);
+                reject();
+            })
+        })
+       
+    }
+    
     
 }

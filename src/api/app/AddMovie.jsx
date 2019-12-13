@@ -27,6 +27,10 @@ export class AddMovie extends React.Component {
         
     }
 
+   
+    // setCustomValidity(input){
+    //     alert(input);
+    // }
 
     render() {
         return (
@@ -72,8 +76,9 @@ export class AddMovie extends React.Component {
 
                         <div className="col-6">
                             <label htmlFor="movieYear">Type in the movie year</label>
-                            <input type="text" className="form-control" id="movieYear"
+                            <input type="number" className="form-control" id="movieYear"
                                 value={this.state.movieYear}
+                                // oninvalid= {this.setCustomValidity('needs to be an number')}
                                 onChange={e => this.setState({ movieYear: e.target.value })}
                                 placeholder="Enter Year" />
 
