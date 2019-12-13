@@ -26,5 +26,18 @@ export class MovieService{
                 .catch(x=> {alert(x); reject()});
         })
     }
+
+    postNewMovie(title, genr, year, coty, ators){
+        axios.post(`${this.secondURL}/add`,{
+            movieTitle:title,
+            genre: genr,
+            movieYear:year,
+            country: coty,
+            actors: ators
+
+        })
+
+
+    }
     
 }

@@ -18,7 +18,12 @@ export class MovieList extends React.Component {
     render() {
         return (
             <>
+                <div>
+                <button type="button" className="btn btn-success my-4 ml-2 px-2 text-center"><Link to="/movie/add">Add a new movie entry</Link></button>
+                </div>
+
                 <h2 className="mt-4 badge badge-secondary" >Here are all the movies we have</h2>
+                
                 <table className="table table-striped">
                     <thead>
                         <tr>
