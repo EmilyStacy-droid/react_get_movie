@@ -14,11 +14,10 @@ export const App = () => {
         <Header />
         <Switch>
          <Route path="/movie/addNew" component= {AddMovie} />
+         <Route path="/movie/:movieId" component = {MovieItem} />
          <Route path="/" component={MovieList}/>
           <Route path="/movies" component={MovieList} />
-          <Route path="/movie/:movieId" component = {MovieItem} />
-         
-        </Switch>
+         </Switch>
       </Router>
     </>
   );

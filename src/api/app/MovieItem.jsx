@@ -1,6 +1,7 @@
 import React from 'react';
 import { MovieService } from '../MovieService';
 import { Link} from 'react-router-dom';
+import {MovieEditor} from './MovieEditor';
 
 export class MovieItem extends React.Component {
     state={
@@ -28,7 +29,7 @@ export class MovieItem extends React.Component {
                 <div className="container">
                     <div className="m-4 text-center">
                         <Link to="/movies">
-                            <button type="button" class="btn btn-primary">Return to Home</button>
+                            <button type="button" className="btn btn-primary">Return to Home</button>
                         </Link>
                     </div>
 
@@ -42,6 +43,8 @@ export class MovieItem extends React.Component {
 
                         </div>
                     </div>
+
+                    <MovieEditor movieId={this.state.movie.id} />
 
 
                 </div>

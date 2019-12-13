@@ -28,15 +28,14 @@ export class MovieService{
     }
 
     postNewMovie(title, genr, year, coty, ators){
-        axios.post(`${this.secondURL}/add`,{
-            movieTitle:title,
-            genre: genr,
-            movieYear:year,
-            country: coty,
-            actors: ators
 
-        })
-
+        return new Promise((resolve,reject)=>{
+       axios.post(`${this.secondURL}/add?movieTitle=${title}&genre=${genr}&country=${coty}&movieYear=${year}&actors=${ators}`
+           
+        ).then(x => resolve(x.data))
+          .catch(x => {alert(x); reject()})
+    }
+        )
 
     }
     

@@ -5,21 +5,25 @@ import { Link} from 'react-router-dom';
 export class MovieList extends React.Component {
 
     state = {
-        movies: []
+        movies: [],
+        
     }
 
     movieService = new MovieService();
 
     componentDidMount() {
+       
         this.movieService.getMovies().then(movies => this.setState({ movies }));
+
         // this.movieService.getMovies().then(movies=>this.setState({movies}));
     }
 
     render() {
         return (
             <>
+              
                 <div>
-                <button type="button" className="btn btn-success my-4 ml-2 px-2 text-center"><Link to="/movie/add">Add a new movie entry</Link></button>
+                <button type="button" className="btn btn-success my-4 ml-2 px-2 text-center"><Link to="/movie/addNew">Add a new movie entry</Link></button>
                 </div>
 
                 <h2 className="mt-4 badge badge-secondary" >Here are all the movies we have</h2>
