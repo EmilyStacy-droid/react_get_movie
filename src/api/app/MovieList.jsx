@@ -18,6 +18,17 @@ export class MovieList extends React.Component {
         // this.movieService.getMovies().then(movies=>this.setState({movies}));
     }
 
+    onDelete(movieId){
+        if(window.confirm("Are you sure you want to delete this movie entry?")) {
+            this.movieService.deleteMovie(movieId);
+            this.setState(prevState => {
+                prevState.movies = prevState.movies.filter(x => x.id !== movieId);
+                return prevState;
+            });
+           
+        }
+    }
+
     render() {
         return (
             <>
@@ -36,6 +47,7 @@ export class MovieList extends React.Component {
                             <th scope="col">Year</th>
                             <th scope="col">Country</th>
                             <th scope="col">Actors</th>
+                            <th>&nbsp;</th>
                         </tr>
                     </thead>
 
@@ -47,7 +59,9 @@ export class MovieList extends React.Component {
                                 <td> {movie.actors !== null ? movie.actors : 'N/A'} </td>
                                 <td> {movie.country !== null ? movie.country : 'N/A'} </td>
                                 <td> {movie.actors !== null ? movie.actors : 'N/A'} </td>
+                                <td><button className="btn btn-sm btn-danger"  onClick = {e =>this.onDelete(movie.id)}>X</button></td>
                             </tr>
+
                         ))
                         }
 

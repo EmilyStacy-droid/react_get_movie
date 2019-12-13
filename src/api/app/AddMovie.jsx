@@ -14,16 +14,16 @@ export class AddMovie extends React.Component {
     movieService = new MovieService();
 
     onSubmit() {
-    //     var onSaveComplete = () => this.setState( {
-    //         redirect:true
-    // });
-
         
         console.log(this.state);
 
         this.movieService.postNewMovie(this.state.movieTitle, this.state.genre, this.state.movieYear, this.state.country, this.state.actors);
 
         this.setState({movieTitle:'', genre:'', movieYear:'',country:'',actors:''});
+
+        var onSaveComplete = () => this.setState( {
+           redirect:true
+     });
         
     }
 
@@ -35,7 +35,13 @@ export class AddMovie extends React.Component {
     render() {
         return (
            
-            <>
+            <> 
+               {this.state.redirect ? <Redirect to='movies'/> : null}  
+                    <div className="m-4 text-center">
+                        <Link to="/movies">
+                            <button type="button" className="btn btn-primary">Return to Home</button>
+                        </Link>
+                    </div>
                 <h2 className="mx-2 my-4 px-2 text-center">Add a new movie!</h2>
 
                 <form className="mx-2 px-2">

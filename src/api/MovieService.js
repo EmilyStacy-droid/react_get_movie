@@ -50,6 +50,15 @@ export class MovieService{
         })
        
     }
+
+    deleteMovie(id) {
+        return new Promise((resolve, reject) => {
+            axios.delete(`${this.secondURL}/${id}/delete`)
+                .then(x => resolve(x.data))
+                .catch(x=> {alert(x); reject()});
+        })
+
+    }
     
     
 }
