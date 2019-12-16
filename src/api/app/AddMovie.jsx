@@ -8,22 +8,25 @@ export class AddMovie extends React.Component {
         genre: '',
         movieYear: '',
         country: '',
-        actors: ''
+        actors: '',
+        isCompleted:false
     }
 
     movieService = new MovieService();
 
     onSubmit() {
         
-        console.log(this.state);
-
         this.movieService.postNewMovie(this.state.movieTitle, this.state.genre, this.state.movieYear, this.state.country, this.state.actors);
 
-        this.setState({movieTitle:'', genre:'', movieYear:'',country:'',actors:''});
+        this.state.isCompleted = true;
+
+        this.setState({movieTitle:'', genre:'', movieYear:'',country:'',actors:'', isCompleted:false});
 
         var onSaveComplete = () => this.setState( {
            redirect:true
      });
+
+       
         
     }
 
@@ -43,6 +46,7 @@ export class AddMovie extends React.Component {
                         </Link>
                     </div>
                 <h2 className="mx-2 my-4 px-2 text-center">Add a new movie!</h2>
+                {this.state.isCompleted?<div>Your movie is submitted!</div>: null}
 
                 <form className="mx-2 px-2">
                     <label htmlFor="movieTitle" className="my-3">Type in the movie title</label>
