@@ -80,7 +80,7 @@ export class MovieEditor extends React.Component {
 
                     <div className="col-6">
                         <label htmlFor="movieYear">Type in the movie year</label>
-                        <input type="text" className="form-control" id="movieYear"
+                        <input type="number" className="form-control" id="movieYear"
                             // oninvalid= {this.setCustomValidity('needs to be an number')}
                             onChange={e => this.setState({ movieYear: e.target.value })}
                             placeholder={this.state.movieYear} />
