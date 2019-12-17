@@ -46,7 +46,7 @@ export class MovieItem extends React.Component {
                         </div>
                     </div>
 
-                    <MovieEditor movieId={this.state.movie.id} />
+                    <MovieEditor movie={this.state.movie} />
 
 
                 </div>
