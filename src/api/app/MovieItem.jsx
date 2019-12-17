@@ -40,6 +40,7 @@ export class MovieItem extends React.Component {
                             <h5 className="card-title">{this.state.movie.movieTitle!==null?this.state.movie.movieTitle: "N/A"}</h5>
                             <p className="card-text">{this.state.movie.genre!==null?this.state.movie.genre:"N/A"}</p>
                             <p className="card-text">{this.state.movie.movieYear!==null?this.state.movie.movieYear:"N/A"}</p>
+                            <p className="card-text">{this.state.movie.country!==null?this.state.movie.country:"N/A"}</p>
                             <p className="card-text">{this.state.movie.actors!==null?this.state.movie.actors:"N/A"}</p>
                             
 
