@@ -54,7 +54,7 @@ export class MovieList extends React.Component {
 
                     <tbody>
                         {this.state.movies.map((movie, i) => (
-                            <tr key={i} id={i}>
+                            <tr data-cy="listHead" key={i} id={i}>
                                 <td><Link to = {`/movie/${movie.id}`}>{movie.movieTitle!==null?movie.movieTitle: "N/A"}</Link></td>
                                 <td >{movie.genre !== null ? movie.genre : 'N/A'}</td>
                                 <td> {movie.movieYear !== null ? movie.movieYear : 'N/A'} </td>

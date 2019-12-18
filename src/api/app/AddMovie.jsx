@@ -48,7 +48,7 @@ export class AddMovie extends React.Component {
                 <h2 className="mx-2 my-4 px-2 text-center">Add a new movie!</h2>
                 {this.state.isCompleted?<div>Your movie is submitted!</div>: null}
 
-                <form className="mx-2 px-2">
+                <form className="mx-2 px-2" data-cy="addMovieForm">
                     <label htmlFor="movieTitle" className="my-3">Type in the movie title</label>
                     <input type="text" className="form-control" id="movieTitle"
                         value={this.state.movieTitle}
