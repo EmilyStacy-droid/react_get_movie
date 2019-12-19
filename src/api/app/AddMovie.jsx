@@ -45,7 +45,7 @@ export class AddMovie extends React.Component {
                             <button type="button" className="btn btn-primary">Return to Home</button>
                         </Link>
                     </div>
-                <h2 className="mx-2 my-4 px-2 text-center">Add a new movie!</h2>
+                <h2 className="mx-2 my-4 px-2 text-center" id="addMovieHeader">Add a new movie!</h2>
                 {this.state.isCompleted?<div>Your movie is submitted!</div>: null}
 
                 <form className="mx-2 px-2" data-cy="addMovieForm">

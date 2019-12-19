@@ -1,5 +1,18 @@
 ///<reference types = "cypress" />
+import {MovieListPage} from '../models/movie_list_page_model';
+const movieListPage;
 describe(`account_list`,()=> {
+    before()
+    beforeEach(function(){
+        movieListPage = new movieListPage();
+        movieListPage.visit();
+
+    }
+    )
+    afterEach()
+    after()
+
+
     it(`should load`, ()=> {
         cy.visit('/');
         cy.get('#title').contains(`GET MOVIES`);
@@ -14,9 +27,10 @@ describe(`account_list`,()=> {
 
 
 describe(`add_movie`, ()=> {
+
     it(`should add movie`, () => {
-        cy.visit('/movie/addNew');
-        cy.get('#movieTitle').type('myMovie');
+        MovieListPage.visit();
+        MovieListPage.getFormTitle.type('myMovie');
         cy.get('#country').type('USA');
         cy.get('#actors').type('me');
         cy.get('.genre').select('others');
